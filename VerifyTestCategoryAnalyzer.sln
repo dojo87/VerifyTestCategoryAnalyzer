@@ -12,7 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85485EE8-7806-4E6C-91F7-8E542D1F1588}"
 	ProjectSection(SolutionItems) = preProject
 		icon.png = icon.png
-		LICENSE = LICENSE
+		LICENSE.md = LICENSE.md
 		NuGet.config = NuGet.config
 		README.md = README.md
 	EndProjectSection

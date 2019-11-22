@@ -2,3 +2,4 @@
 **/obj
 **/packages
 /.vs/VerifyTestCategoryAnalyzer/v16
+*.user
