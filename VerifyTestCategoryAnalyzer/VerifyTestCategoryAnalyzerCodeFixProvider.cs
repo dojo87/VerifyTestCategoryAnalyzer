@@ -1,3 +1,8 @@
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CodeActions;
+using Microsoft.CodeAnalysis.CodeFixes;
+using Microsoft.CodeAnalysis.CSharp;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
@@ -5,13 +10,6 @@ using System.Composition;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CodeFixes;
-using Microsoft.CodeAnalysis.CodeActions;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.CodeAnalysis.Rename;
-using Microsoft.CodeAnalysis.Text;
 
 namespace VerifyTestCategoryAnalyzer
 {
@@ -42,7 +40,7 @@ namespace VerifyTestCategoryAnalyzer
             {
                 var diagnosticSpan = diagnostic.Location.SourceSpan;
 
-                var declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<MethodDeclarationSyntax>().First();
+                MethodDeclarationSyntax declaration = root.FindToken(diagnosticSpan.Start).Parent.AncestorsAndSelf().OfType<MethodDeclarationSyntax>().First();
 
                 context.RegisterCodeFix(
                     CodeAction.Create(
@@ -78,11 +76,13 @@ namespace VerifyTestCategoryAnalyzer
                   .WithLeadingTrivia(currentIndent)
                   .WithTrailingTrivia(SyntaxFactory.Whitespace(Environment.NewLine)));
 
-            return document.WithSyntaxRoot(
+            document = document.WithSyntaxRoot(
                 root.ReplaceNode(
                     methodDeclaration,
                     methodDeclaration.WithAttributeLists(attributes)
-                )).Project.Solution;
+                ));
+
+            return document.Project.Solution;
         }
 
         private static AttributeArgumentSyntax CreateLiteralArgumentFromString(string argumentLiteral)

@@ -12,13 +12,13 @@
     <Authors>dojo dojo@op.pl</Authors>
     <PackageLicenseUrl></PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/dojo87/VerifyTestCategoryAnalyzer</PackageProjectUrl>
-    <PackageIconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</PackageIconUrl>
+    <PackageIconUrl>https://github.com/dojo87/VerifyTestCategoryAnalyzer/raw/master/VerifyTestCategoryAnalyzer/test-category-icon.png</PackageIconUrl>
     <RepositoryUrl>https://github.com/dojo87/VerifyTestCategoryAnalyzer</RepositoryUrl>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Description>Analyzer that verifies whether all Tests have a test category assigned (XUnit, NUnit, MSTest)</Description>
     <PackageReleaseNotes>First version</PackageReleaseNotes>
-    <Copyright>Copyright</Copyright>
-    <PackageTags>VerifyTestCategoryAnalyzer, analyzers, nunit, xunit, mstest</PackageTags>
+    <Copyright>Copyright dojo@op.pl</Copyright>
+    <PackageTags>VerifyTestCategoryAnalyzer, analyzers, nunit, xunit, mstest, test category, trait</PackageTags>
     <NoPackageAnalysis>true</NoPackageAnalysis>
     <Version>1.0.0</Version>
     <PackageLicenseExpression></PackageLicenseExpression>
